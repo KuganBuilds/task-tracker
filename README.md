@@ -2,7 +2,7 @@
 A console-based Task Tracker application built using Java and Maven.
 
 ## Project URL
-URL: https://github.com/KuganBuilds/task-tracker
+URL: [https://github.com/KuganBuilds/task-tracker](https://roadmap.sh/projects/task-tracker)
 
 ## Features
 - Add, view, and complete tasks
