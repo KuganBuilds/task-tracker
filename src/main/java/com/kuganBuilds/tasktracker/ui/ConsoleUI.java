@@ -51,17 +51,22 @@ public class ConsoleUI {
 
     //Add Task UI
     private void addTaskUI(){
-        System.out.print("Title : ");
-        String title = scanner.nextLine();
+        try {
+            System.out.print("Title: ");
+            String title = scanner.nextLine();
 
+            System.out.print("Description: ");
+            String description = scanner.nextLine();
 
-        System.out.print("Description : ");
-        String description = scanner.nextLine();
+            System.out.print("Due date (YYYY-MM-DD): ");
+            LocalDate dueDate = LocalDate.parse(scanner.nextLine());
 
-        System.out.print("Due Date (YYYY-MM-DD) ");
-        LocalDate date = LocalDate.parse(scanner.nextLine());
+            taskService.addTask(title, description, dueDate);
+            System.out.println("Task added successfully.");
 
-        taskService.addTask(title,description,date);
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
     }
 
 
@@ -69,35 +74,43 @@ public class ConsoleUI {
     private void viewTaskUI(){
         List<Task> tasks = taskService.getAllTasks();
 
-        if (tasks.isEmpty()){
-            System.out.println("No task available");
+        if (tasks.isEmpty()) {
+            System.out.println("No tasks available.");
             return;
         }
 
-        System.out.println("\n--- TASK LIST ---");
-        for (Task task : tasks) {
-            System.out.println(
-                    task.getId() + " | " +
-                            task.getTitle() + " | " +
-                            (task.isCompleted() ? "DONE" : "PENDING") +
-                            " | Due: " + task.getDueDate()
-            );
+        System.out.println("\nID | TITLE | STATUS | DUE DATE");
+        System.out.println("----------------------------------");
 
+        for (Task task : tasks) {
+            System.out.printf(
+                    "%d | %s | %s | %s%n",
+                    task.getId(),
+                    task.getTitle(),
+                    task.isCompleted() ? "DONE" : "PENDING",
+                    task.getDueDate()
+            );
         }
     }
 
 
     //Task Completed UI
     private void completeTaskUI() {
-        System.out.print("Enter Task ID to complete: ");
-        long taskId = scanner.nextLong();
+        try {
+            System.out.print("Enter Task ID to complete: ");
+            long taskId = scanner.nextLong();
+            scanner.nextLine();
 
-        boolean completed = taskService.completeTask(taskId);
+            boolean completed = taskService.completeTask(taskId);
 
-        if (completed) {
-            System.out.println("Task marked as completed.");
-        } else {
-            System.out.println("Task not found.");
+            if (completed) {
+                System.out.println("Task marked as completed.");
+            } else {
+                System.out.println("Task not found.");
+            }
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
         }
     }
 

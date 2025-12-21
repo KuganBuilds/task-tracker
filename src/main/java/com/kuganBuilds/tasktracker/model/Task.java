@@ -10,8 +10,10 @@ public class Task {
     private boolean completed;
     private LocalDate dueDate;
 
+    // ✅ REQUIRED by Jackson
+    public Task() {
+    }
 
-    //Constructor
     public Task(Long id, String title, String description, LocalDate dueDate) {
         this.id = id;
         this.title = title;
@@ -20,45 +22,50 @@ public class Task {
         this.dueDate = dueDate;
     }
 
-
-    //Getters & setters
+    // getters
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public String getDescription() {
         return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public boolean isCompleted() {
         return completed;
     }
 
-    public void setCompleted(boolean completed) {
-        this.completed = completed;
-    }
-
     public LocalDate getDueDate() {
         return dueDate;
     }
 
+    // ✅ REQUIRED setters
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
+    }
+
     public void setDueDate(LocalDate dueDate) {
         this.dueDate = dueDate;
+    }
+
+    // business method
+    public void markCompleted() {
+        this.completed = true;
     }
 }
