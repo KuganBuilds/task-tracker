@@ -1,4 +1,4 @@
-package com.kuganBuilds;
+package com.kuganBuilds.tasktracker;
 
 
 public class TaskTrackerApp

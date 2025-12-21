@@ -1,4 +1,4 @@
-package com.kuganBuilds;
+package com.kuganBuilds.tasktracker;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
