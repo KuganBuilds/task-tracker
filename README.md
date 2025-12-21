@@ -1,6 +1,8 @@
 # Task Tracker (Java)
-
 A console-based Task Tracker application built using Java and Maven.
+
+## Project URL
+https://github.com/KuganBuilds/task-tracker
 
 ## Features
 - Add, view, and complete tasks
