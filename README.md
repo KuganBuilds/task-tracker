@@ -1,7 +1,5 @@
 Task Tracker – Java CLI Application
 
-Project URL : https://roadmap.sh/projects/task-tracker
-
 A console-based Task Tracker application built using Core Java.
 This project allows users to manage tasks using a simple
 menu-driven command-line interface.
