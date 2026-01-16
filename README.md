@@ -1,3 +1,13 @@
+
+## 🔄 Project Evolution Notice
+
+This repository contains the **initial CLI-based version** of the Task Tracker application, built using core Java to strengthen programming fundamentals and business logic.
+
+The project has since been **upgraded to a Spring Boot REST API** with database persistence, layered architecture, and modern backend practices.
+
+👉 **Upgraded version (Spring Boot REST API):**  
+[https://github.com/<your-username>/task-tracker-rest-api](https://github.com/KuganBuilds/task-tracker-rest-api)
+
 Task Tracker – Java CLI Application
 
 A console-based Task Tracker application built using Core Java.
